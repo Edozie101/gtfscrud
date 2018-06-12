@@ -6,10 +6,10 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const stopTimes = new Schema({
-    trip_id: { type: ObjectId, required: true },
+    trip_id: { type: ObjectId, required: true, ref: 'Trips' },
     arrival_time: { type: Date, required: true},
     departure_time: {type: Date, required: true},
-    stop_id: {type: String, required: true}, // should refer to a stop
+    stop_id: {type: String, required: true, ref: 'Stops'}, // should refer to a stop
     stop_sequence: {type: Number, required: true},
     stop_headsign: {type: String, required: false},
     pickup_type: {type: Number, required: false},
