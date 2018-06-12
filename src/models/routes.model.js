@@ -7,7 +7,7 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const routes = new Schema({
     route_id: {type: ObjectId, required: true},
-    agency_id: {type: ObjectId, required: false},
+    agency_id: {type: ObjectId, required: false, ref: 'Agency'},
     route_short_name: {type: String, required: true},
     route_long_name: {type: String, required: true},
     route_type: {type: Number, required: true},
