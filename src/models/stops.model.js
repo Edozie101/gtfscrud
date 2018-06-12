@@ -13,6 +13,11 @@ module.exports = function (app) {
     stop_desc: {type: String, required: false},
     stop_lat: {type: Number, required: true},
     stop_lon: {type: Number, required: true},
+    zone_id: {type: Number, required: false},
+    stop_url: {type: String, required: false},
+    location_type: {type: Number, required: false},
+    parent_station: {type: Number, required: false},
+    wheelchair_boarding: {type: Number, required: false}
     
   }, {
     timestamps: true
